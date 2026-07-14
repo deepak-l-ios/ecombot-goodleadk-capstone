@@ -97,10 +97,13 @@ def _shutdown_orders_server() -> None:
         _orders_server_process.terminate()
         _orders_server_process.wait(timeout=5)
 
-# Start the orders MCP server as a background process when this module is imported.
-# This is the same pattern as lab/demo/day08/agent.py.
-_orders_server_process = _start_orders_server()
-atexit.register(_shutdown_orders_server)
+# Start the orders MCP server only when USE_MCP=true.
+# Default is false so Chainlit/demo can run without a separate server process.
+_USE_MCP = os.getenv("USE_MCP", "false").lower() == "true"
+_orders_server_process = None
+if _USE_MCP:
+    _orders_server_process = _start_orders_server()
+    atexit.register(_shutdown_orders_server)
 
 def _orders_toolset() -> McpToolset:
     """McpToolset connected to the orders Streamable HTTP MCP server."""
@@ -239,6 +242,20 @@ deep_support_agent = LlmAgent(
 )
 
 # MCP-enabled agent — orders + inventory via FastMCP servers.
+# Only built when USE_MCP=true; otherwise falls back to direct-tool agent.
+if _USE_MCP:
+    _mcp_tools = [
+        save_customer_name,
+        lookup_product,
+        _orders_toolset(),
+        _inventory_toolset(
+            delay_seconds=_SLOW_INVENTORY_DELAY,
+            timeout=_SLOW_INVENTORY_TIMEOUT,
+        ),
+    ]
+else:
+    _mcp_tools = [save_customer_name, get_order_status, cancel_order, lookup_product]
+
 mcp_support_agent = LlmAgent(
     name="ecombot_support_mcp",
     model=LiteLlm(model=DEEP_MODEL),
@@ -247,15 +264,7 @@ mcp_support_agent = LlmAgent(
         "eComBot support agent (MCP route): order management and inventory "
         "checks via FastMCP servers; RAG grounding for FAQ."
     ),
-    tools=[
-        save_customer_name,
-        lookup_product,
-        _orders_toolset(),
-        _inventory_toolset(
-            delay_seconds=_SLOW_INVENTORY_DELAY,
-            timeout=_SLOW_INVENTORY_TIMEOUT,
-        ),
-    ],
+    tools=_mcp_tools,
     after_model_callback=output_pii_guardrail,
     before_tool_callback=tool_safety_guardrail,
 )
