@@ -45,7 +45,6 @@ litellm.suppress_debug_info = True
 
 from agents.orchestrator import orchestrator
 from session import make_runner
-from reasoning import TurnResult
 from tracing import trace_turn
 from routing import routing_log, enable_routing_callbacks, classify_query
 from rag.retriever import retrieve
@@ -449,7 +448,6 @@ async def on_message(message: cl.Message):
 
     # Run the ADK turn
     result = await _run_turn(prompt)
-    runner = cl.user_session.get("runner")
     user_id = cl.user_session.get("user_id")
     session_id = cl.user_session.get("session_id")
     turn_idx = cl.user_session.get("turn_index", 0)
@@ -477,9 +475,6 @@ async def on_message(message: cl.Message):
                     seen.add(name)
     except Exception:
         pass
-
-    # Use run_turn from reasoning.py for the Sales agent path to get step narration
-    reasoning_result: TurnResult | None = None
 
     # LangSmith trace — always fire, using a synthetic TurnResult from the ADK result
     from reasoning import TurnResult as _TurnResult, ReasoningStep as _ReasoningStep
