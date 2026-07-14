@@ -506,6 +506,24 @@ async def on_message(message: cl.Message):
             turn_result=reasoning_result,
             turn_index=turn_idx,
         )
+    else:
+        # Always trace even when reasoning_result is unavailable (tool-only turns)
+        from reasoning import TurnResult, ReasoningStep
+        _fallback = TurnResult(
+            steps=[ReasoningStep(kind="exit", label="tool-turn", detail=result.get("text", ""))],
+            final_text=result.get("text", ""),
+            exit_reason="tool_response",
+            is_reflection=False,
+            tool_call_count=len(result.get("tools_called", [])),
+        )
+        trace_turn(
+            agent_name="ecombot_orchestrator",
+            user_id=user_id,
+            session_id=session_id,
+            message=prompt,
+            turn_result=_fallback,
+            turn_index=turn_idx,
+        )
     cl.user_session.set("turn_index", turn_idx + 1)
 
     # Group 4: persist customer name from save_customer_name tool response
