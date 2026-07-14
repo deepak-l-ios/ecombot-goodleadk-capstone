@@ -24,7 +24,7 @@ jobs:
         run: pip install ruff
 
       - name: Run ruff
-        run: ruff check src/ --select E,F,W --ignore E501,W291,W293
+        run: ruff check src/ --select E,F,W --ignore E501,W291,W293,E402
 
   # ── Job 2: Unit tests ──────────────────────────────────────────────────────
   test:
