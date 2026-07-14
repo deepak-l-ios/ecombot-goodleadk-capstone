@@ -47,10 +47,20 @@ def trace_turn(
     turn_index: int,
 ) -> str | None:
     """Export a completed turn to LangSmith. Returns the root run ID, or None
-    if LangSmith is not configured (LANGSMITH_API_KEY unset)."""
+    if LangSmith is not configured (LANGSMITH_API_KEY unset) or unavailable."""
     client = _get_client()
     if client is None:
         return None
+
+    try:
+        return _send_trace(client, agent_name, user_id, session_id, message, turn_result, turn_index)
+    except Exception as exc:
+        import logging
+        logging.getLogger("ecombot.tracing").warning("LangSmith trace failed (non-fatal): %s", exc)
+        return None
+
+
+def _send_trace(client, agent_name, user_id, session_id, message, turn_result, turn_index):
 
     project = os.environ.get("LANGSMITH_PROJECT", "ecombot-capstone")
     root_id = str(uuid.uuid4())
