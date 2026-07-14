@@ -16,7 +16,6 @@ import logging
 from contextlib import contextmanager
 from typing import Generator
 
-import psycopg2
 from psycopg2 import pool as pg_pool
 from psycopg2.extras import RealDictCursor
 

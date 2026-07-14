@@ -45,7 +45,7 @@ for _name in ("LiteLLM", "LiteLLM Router", "LiteLLM Proxy"):
 log = logging.getLogger("ecombot")
 logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(name)s: %(message)s")
 
-from agents.support_agent import support_agent, fast_support_agent, deep_support_agent
+from agents.support_agent import fast_support_agent, deep_support_agent
 from agents.orchestrator import orchestrator, delegation_trace
 from agents.sub_agent_patterns import (
     concierge_agent,
@@ -64,7 +64,6 @@ if _DB_MODE:
     from services.history_service import get_history, record_turn
     from services.session_service import (
         check_connection as redis_ok,
-        load_session_ref,
         save_session_ref,
         save_session_state,
     )
@@ -188,7 +187,7 @@ async def run_scenarios(runner, user_id: str, session_id: str) -> None:
         _sep()
         print(f"\n  [{label}]")
         print(f"\n  You: {prompt}")
-                routing_log.clear()
+        routing_log.clear()
         delegation_trace.clear()
         reply = await _ask(runner, user_id, session_id, prompt)
         route = classify_query(prompt)
@@ -201,14 +200,14 @@ async def run_scenarios(runner, user_id: str, session_id: str) -> None:
                 err    = entry.get("error", "")
                 suffix = f" ← {err}" if err else f" ({ms} ms)"
                 print(f"  [routing] {status:7}  {model}{suffix}")
-                if delegation_trace:
-            print()
-            for entry in delegation_trace:
-                if entry["type"] == "call":
-                    print(f"  [delegate→{entry['agent']}] call  {entry['tool']}({entry['args']})")
-                else:
-                    status_str = str(entry.get("response", {}))[:60]
-                    print(f"  [delegate→{entry['agent']}] result {entry['tool']} → {status_str}")
+            if delegation_trace:
+                print()
+                for entry in delegation_trace:
+                    if entry["type"] == "call":
+                        print(f"  [delegate\u2192{entry['agent']}] call  {entry['tool']}({entry['args']})")
+                    else:
+                        status_str = str(entry.get("response", {}))[:60]
+                        print(f"  [delegate\u2192{entry['agent']}] result {entry['tool']} \u2192 {status_str}")
 
     _sep("=")
 
@@ -293,7 +292,7 @@ async def main() -> None:
         )
         return
 
-        enable_routing_callbacks()
+    enable_routing_callbacks()
 
     skip_scenarios = "--repl" in sys.argv
 
@@ -305,7 +304,7 @@ async def main() -> None:
 |   Backend : {backend_label:<55}  |
 +========================================================================+""")
 
-        if _DB_MODE:
+    if _DB_MODE:
         print()
         pg_status = "OK" if pg_ok() else "UNREACHABLE"
         redis_status = "OK" if redis_ok() else "UNREACHABLE"
@@ -320,7 +319,7 @@ async def main() -> None:
     runner, user_id, session_id = await make_runner(orchestrator)
     print(f"  Session: {session_id}  User: {user_id}\n")
 
-        if _DB_MODE:
+    if _DB_MODE:
         save_session_ref(user_id, session_id)
 
     if not skip_scenarios:

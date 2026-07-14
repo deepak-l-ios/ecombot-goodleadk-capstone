@@ -107,8 +107,8 @@ def _build_product_card(tool_resp: dict) -> str:
     lines = []
     for p in products[:3]:  # show up to 3 products
         lines.append(f"### {p.get('name', 'Product')}")
-        lines.append(f"| Field | Value |")
-        lines.append(f"|-------|-------|")
+        lines.append("| Field | Value |")
+        lines.append("|-------|-------|")
         lines.append(f"| **Price** | ${p.get('price', '—')} |")
         lines.append(f"| **Category** | {p.get('category', '—')} |")
         stock_qty = p.get('stock_qty', 0)

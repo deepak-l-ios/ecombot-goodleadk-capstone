@@ -164,7 +164,6 @@ async def run_voice_loop(lang_key: str, allow_barge_in: bool, text_mode: bool) -
         else:
             try:
                 utterance = audio.listen_utterance()
-                t_capture_end = utterance.capture_end_t
                 transcript = stt.transcribe(utterance.audio, language=lang.lang_code)
                 user_input = transcript.text.strip()
                 if not user_input:
