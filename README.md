@@ -310,9 +310,18 @@ docker compose up
 | `REDIS_PASSWORD` | — | Redis password |
 | `LANGSMITH_API_KEY` | — | Optional — enables LangSmith tracing |
 | `LANGSMITH_PROJECT` | `ecombot-capstone` | LangSmith project name |
+| `LANGSMITH_ENDPOINT` | — | Optional — override API endpoint (e.g. `https://apac.api.smith.langchain.com` for APAC) |
 | `ORDERS_SERVER_PORT` | `8766` | FastMCP orders server port |
 
 See `.env.example` for the full list with descriptions.
+
+---
+
+## LangSmith Tracing
+
+Every agent turn is traced to LangSmith. The screenshot below shows live traces in the `ecombot-capstone` project:
+
+![LangSmith traces](docs/screenshots/langsmith-traces.png)
 
 ---
 
