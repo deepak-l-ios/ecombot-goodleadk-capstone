@@ -54,8 +54,8 @@ def test_lookup_product_result_has_price():
     result = lookup_product("headphones", _ctx())
     assert result["found"] is True
     product = result["products"][0]
-    assert "price" in product
-    assert isinstance(product["price"], (int, float))
+    assert "price_usd" in product
+    assert isinstance(product["price_usd"], (int, float))
 
 
 def test_lookup_product_result_has_stock():

@@ -172,11 +172,12 @@ def cancel_order(
         row = MOCK_ORDERS.get(oid)
         if row is None:
             return {"cancelled": False, "order_id": oid, "error": f"Order '{oid}' not found."}
-        if row["status"].lower() == "cancelled":
+        _non_cancellable = {"cancelled", "delivered", "shipped", "out for delivery"}
+        if row["status"].lower() in _non_cancellable:
             return {
                 "cancelled": False,
                 "order_id": oid,
-                "error": f"Order '{oid}' is already cancelled. No changes were made.",
+                "error": f"Order '{oid}' cannot be cancelled (status: {row['status']}). Only Pending or Processing orders can be cancelled.",
             }
         MOCK_ORDERS[oid]["status"] = "Cancelled"
         customer_name = row["customer_name"]
@@ -194,11 +195,12 @@ def cancel_order(
         if row is None:
             return {"cancelled": False, "order_id": oid, "error": f"Order '{oid}' not found."}
 
-        if row["status"].lower() == "cancelled":
+        _non_cancellable = {"cancelled", "delivered", "shipped", "out for delivery"}
+        if row["status"].lower() in _non_cancellable:
             return {
                 "cancelled": False,
                 "order_id": oid,
-                "error": f"Order '{oid}' is already cancelled. No changes were made.",
+                "error": f"Order '{oid}' cannot be cancelled (status: {row['status']}). Only Pending or Processing orders can be cancelled.",
             }
 
         try:
