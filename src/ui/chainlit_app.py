@@ -45,7 +45,7 @@ litellm.suppress_debug_info = True
 
 from agents.orchestrator import orchestrator
 from session import make_runner
-from reasoning import run_turn as _reasoning_run_turn, TurnResult
+from reasoning import TurnResult
 from tracing import trace_turn
 from routing import routing_log, enable_routing_callbacks, classify_query
 from rag.retriever import retrieve
@@ -480,50 +480,24 @@ async def on_message(message: cl.Message):
 
     # Use run_turn from reasoning.py for the Sales agent path to get step narration
     reasoning_result: TurnResult | None = None
-    if "delegate_to_sales" in result.get("tools_called", []) or not result["tools_called"]:
-        try:
-            reasoning_result = await _reasoning_run_turn(
-                runner, user_id, session_id, prompt, turn_idx
-            )
-        except Exception:
-            reasoning_result = None
 
-    # Render reasoning steps
-    if reasoning_result and reasoning_result.steps:
-        for step in reasoning_result.steps:
-            if step.kind in ("action", "observation"):
-                async with cl.Step(name=f"{step.kind}: {step.label}", type="tool") as rs:
-                    rs.input = step.detail
-                    rs.output = step.detail[:200]
-
-    # LangSmith trace (no-op if LANGSMITH_API_KEY not set)
-    if reasoning_result:
-        trace_turn(
-            agent_name="ecombot_orchestrator",
-            user_id=user_id,
-            session_id=session_id,
-            message=prompt,
-            turn_result=reasoning_result,
-            turn_index=turn_idx,
-        )
-    else:
-        # Always trace even when reasoning_result is unavailable (tool-only turns)
-        from reasoning import TurnResult, ReasoningStep
-        _fallback = TurnResult(
-            steps=[ReasoningStep(kind="exit", label="tool-turn", detail=result.get("text", ""))],
-            final_text=result.get("text", ""),
-            exit_reason="tool_response",
-            is_reflection=False,
-            tool_call_count=len(result.get("tools_called", [])),
-        )
-        trace_turn(
-            agent_name="ecombot_orchestrator",
-            user_id=user_id,
-            session_id=session_id,
-            message=prompt,
-            turn_result=_fallback,
-            turn_index=turn_idx,
-        )
+    # LangSmith trace — always fire, using a synthetic TurnResult from the ADK result
+    from reasoning import TurnResult as _TurnResult, ReasoningStep as _ReasoningStep
+    _trace_result = _TurnResult(
+        steps=[_ReasoningStep(kind="exit", label="tool-turn", detail=result.get("text", ""))],
+        final_text=result.get("text", ""),
+        exit_reason="tool_response",
+        is_reflection=False,
+        tool_call_count=len(result.get("tools_called", [])),
+    )
+    trace_turn(
+        agent_name="ecombot_orchestrator",
+        user_id=user_id,
+        session_id=session_id,
+        message=prompt,
+        turn_result=_trace_result,
+        turn_index=turn_idx,
+    )
     cl.user_session.set("turn_index", turn_idx + 1)
 
     # Group 4: persist customer name from save_customer_name tool response
