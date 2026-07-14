@@ -1,0 +1,100 @@
+[
+  {
+    "id": "kb-prd-101",
+    "product_id": "PRD-101",
+    "name": "Noise-Cancelling Headphones XB500",
+    "category": "Audio",
+    "price": 149.99,
+    "text": "Product: Noise-Cancelling Headphones XB500 (PRD-101). Category: Audio. Price: $149.99. Description: Over-ear wireless headphones with 30-hour battery life and active noise cancellation (ANC). Features include Bluetooth 5.2, 40mm drivers, USB-C charging (2 hours full charge), foldable design, and built-in microphone. Frequency response: 20Hz-20kHz. Impedance: 32 ohms. Weight: 250g. Warranty: 1 year limited warranty covering manufacturing defects. Not covered: physical damage, water damage, or accessories. Shipping: Standard 3-5 business days; Express 1-2 business days available. Compatible with iOS and Android via companion app.",
+    "metadata": {
+      "doc_type": "product_spec",
+      "product_id": "PRD-101",
+      "category": "Audio",
+      "section": "Product Specifications"
+    }
+  },
+  {
+    "id": "kb-prd-102",
+    "product_id": "PRD-102",
+    "name": "4K Smart TV 55-inch",
+    "category": "Television",
+    "price": 699.00,
+    "text": "Product: 4K Smart TV 55-inch (PRD-102). Category: Television. Price: $699.00. Currently out of stock. Description: 55-inch 4K UHD Smart TV with built-in streaming apps (Netflix, Prime Video, Disney+), HDR10 support, and DLNA. Resolution: 3840x2160. Refresh rate: 60Hz. HDMI ports: 3x HDMI 2.0, 2x USB 2.0. Built-in Wi-Fi 5 and Ethernet. Sound: 20W stereo speakers with Dolby Audio. Warranty: 2 years parts and labour. Screen defects covered under panel warranty. Shipping: Oversized item — free kerbside delivery within 7-10 business days; installation service available at extra cost. Returns: 30-day return window for unopened items; opened TVs accepted within 14 days if screen is undamaged.",
+    "metadata": {
+      "doc_type": "product_spec",
+      "product_id": "PRD-102",
+      "category": "Television",
+      "section": "Product Specifications"
+    }
+  },
+  {
+    "id": "kb-prd-103",
+    "product_id": "PRD-103",
+    "name": "Mechanical Keyboard Pro",
+    "category": "Peripherals",
+    "price": 89.99,
+    "text": "Product: Mechanical Keyboard Pro (PRD-103). Category: Peripherals. Price: $89.99. Description: Tenkeyless (TKL) mechanical keyboard with Cherry MX Red switches and per-key RGB backlight. N-key rollover (NKRO), USB-C detachable cable, PBT double-shot keycaps. Layout: US ANSI. Compatible with Windows, macOS, Linux. Dimensions: 360 x 127 x 40 mm. Weight: 900g. Warranty: 1 year limited warranty on switches rated for 100 million keystrokes. Keycap wear not covered after 90 days. Shipping: Standard 3-5 business days. Returns: 30-day hassle-free returns if unused and original packaging intact.",
+    "metadata": {
+      "doc_type": "product_spec",
+      "product_id": "PRD-103",
+      "category": "Peripherals",
+      "section": "Product Specifications"
+    }
+  },
+  {
+    "id": "kb-prd-104",
+    "product_id": "PRD-104",
+    "name": "Wireless Earbuds Ultra",
+    "category": "Audio",
+    "price": 79.99,
+    "text": "Product: Wireless Earbuds Ultra (PRD-104). Category: Audio. Price: $79.99. Description: True wireless earbuds with hybrid Active Noise Cancellation (ANC), 8-hour bud battery + 16-hour charging case (24 hours total), IPX5 water resistance. Bluetooth 5.3, aptX audio codec. Ear tip sizes: XS/S/M/L included. Touch controls on both earbuds. Microphone: dual-mic beamforming for calls. Charging: USB-C case, wireless Qi charging supported. Warranty: 1 year on earbuds; 6 months on charging case. Water damage is not covered. Shipping: Standard 3-5 business days; eligible for same-day delivery in select areas. Returns: 30-day return window. Earbuds must be returned in original packaging.",
+    "metadata": {
+      "doc_type": "product_spec",
+      "product_id": "PRD-104",
+      "category": "Audio",
+      "section": "Product Specifications"
+    }
+  },
+  {
+    "id": "kb-prd-105",
+    "product_id": "PRD-105",
+    "name": "Gaming Mouse RGB",
+    "category": "Peripherals",
+    "price": 59.99,
+    "text": "Product: Gaming Mouse RGB (PRD-105). Category: Peripherals. Price: $59.99. Description: High-precision gaming mouse with PixArt 3395 optical sensor (100-26000 DPI), 6 programmable buttons, per-zone RGB lighting, and braided USB-A cable. 1000Hz polling rate. Lightweight design: 85g. Grip styles: palm and claw. Onboard memory: 3 profiles. Compatible with Windows 10/11 and macOS 12+. Warranty: 1 year limited warranty. Mouse feet (PTFE skates) are consumable parts and not covered after 90 days. Shipping: Standard 3-5 business days. Returns: 30-day return window if unused.",
+    "metadata": {
+      "doc_type": "product_spec",
+      "product_id": "PRD-105",
+      "category": "Peripherals",
+      "section": "Product Specifications"
+    }
+  },
+  {
+    "id": "kb-prd-106",
+    "product_id": "PRD-106",
+    "name": "Portable SSD 1TB",
+    "category": "Storage",
+    "price": 109.99,
+    "text": "Product: Portable SSD 1TB (PRD-106). Category: Storage. Price: $109.99. Description: USB 3.2 Gen 2 portable SSD with sequential read speeds up to 1050 MB/s and write speeds up to 1000 MB/s. Capacity: 1TB. Interface: USB-C (USB-A adapter included). Form factor: pocket-sized, 51g. Shock-resistant up to 1500G, IP55 dust and splash resistance. Formatted exFAT for cross-platform use (Windows, macOS, Linux, PlayStation, Xbox). Warranty: 3-year limited warranty. Covers drive failure; does not cover data recovery or physical damage. Shipping: Standard 3-5 business days. Returns: 30-day return window.",
+    "metadata": {
+      "doc_type": "product_spec",
+      "product_id": "PRD-106",
+      "category": "Storage",
+      "section": "Product Specifications"
+    }
+  },
+  {
+    "id": "kb-prd-107",
+    "product_id": "PRD-107",
+    "name": "Webcam 4K Pro",
+    "category": "Peripherals",
+    "price": 199.99,
+    "text": "Product: Webcam 4K Pro (PRD-107). Category: Peripherals. Price: $199.99. Description: 4K 30fps / 1080p 60fps USB webcam with Sony STARVIS sensor, 90-degree field of view, dual stereo microphones with noise cancellation, and auto-focus with face-tracking. Privacy shutter included. Compatible with Windows 10+, macOS 11+, Linux. USB-A plug-and-play (no driver needed). Mount: universal clip fits monitors and tripods. Warranty: 2 years limited warranty. Does not cover physical lens scratches after first use. Shipping: Standard 3-5 business days. Returns: 30-day return window if factory seal is intact.",
+    "metadata": {
+      "doc_type": "product_spec",
+      "product_id": "PRD-107",
+      "category": "Peripherals",
+      "section": "Product Specifications"
+    }
+  }
+]

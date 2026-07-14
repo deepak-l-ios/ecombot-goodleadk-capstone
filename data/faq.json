@@ -1,0 +1,122 @@
+[
+  {
+    "id": "faq-returns-policy",
+    "section": "Returns Policy",
+    "text": "Returns Policy: You may return most items within 30 days of delivery for a full refund. Items must be in their original condition and packaging. Opened TVs and large appliances are accepted within 14 days if undamaged. To start a return, contact support with your order ID and reason for return. Refunds are processed within 5-7 business days after we receive the item. Return shipping is free for defective or incorrectly shipped items; customer pays return shipping for change-of-mind returns.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Returns Policy",
+      "page": 1
+    }
+  },
+  {
+    "id": "faq-shipping-standard",
+    "section": "Shipping",
+    "text": "Shipping Options: Standard shipping takes 3-5 business days and is free on orders over $50. Express shipping (1-2 business days) is available for $9.99. Overnight delivery is available in select metro areas for $19.99. Oversized items such as TVs are delivered via kerbside delivery within 7-10 business days at no extra charge. Same-day delivery is available for select products in major cities — check product page for eligibility. Orders placed before 2pm local time qualify for same-day dispatch.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Shipping",
+      "page": 1
+    }
+  },
+  {
+    "id": "faq-order-tracking",
+    "section": "Order Tracking",
+    "text": "Order Tracking: Once your order ships, you will receive an email with a tracking number. Use the tracking number on our website or the carrier's website to follow your delivery. If your tracking shows 'delivered' but you haven't received the package, wait 24 hours as sometimes carriers update early. If still missing after 24 hours, contact our support team with your order ID and we will investigate. Common carriers used: FedEx, UPS, USPS, DHL.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Order Tracking",
+      "page": 1
+    }
+  },
+  {
+    "id": "faq-cancel-order",
+    "section": "Order Cancellation",
+    "text": "Order Cancellation: You can cancel an order at any time before it ships by contacting support or using the 'Cancel Order' button in your account. Orders typically ship within 1-2 business days of being placed. Once an order has shipped, it cannot be cancelled — you must wait for delivery and then initiate a return. Refunds for cancelled orders are processed within 3-5 business days to the original payment method. Digital downloads and gift cards cannot be cancelled once redeemed.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Order Cancellation",
+      "page": 1
+    }
+  },
+  {
+    "id": "faq-warranty-coverage",
+    "section": "Warranty",
+    "text": "Warranty Coverage: All products come with a manufacturer's limited warranty. Most electronics include a 1-year warranty; TVs include 2 years; portable SSDs include 3 years. The warranty covers manufacturing defects and hardware failure under normal use. Not covered: physical damage (drops, cracks), liquid damage, accessories (cables, ear tips), consumable parts (mouse feet, keycaps after 90 days), and damage from unauthorized modifications. To make a warranty claim, contact support with your order ID, product ID, and a description of the defect. We may ask for photos or a short video.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Warranty",
+      "page": 2
+    }
+  },
+  {
+    "id": "faq-warranty-claim-process",
+    "section": "Warranty",
+    "text": "How to Make a Warranty Claim: 1. Contact our support team with your order ID and product ID. 2. Describe the defect and provide photos if possible. 3. We will verify the purchase date and assess whether the issue falls under warranty. 4. Approved claims receive either a replacement unit or a repair, at our discretion. 5. We cover shipping costs for warranty replacements. Warranty claims are typically resolved within 7-10 business days. Out-of-warranty repairs may be available at a service fee — ask support for a repair quote.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Warranty",
+      "page": 2
+    }
+  },
+  {
+    "id": "faq-payment-methods",
+    "section": "Payment",
+    "text": "Payment Methods: We accept Visa, Mastercard, American Express, PayPal, Apple Pay, Google Pay, and store credit. All transactions are processed via SSL-encrypted payment gateways. We do not store full card numbers on our servers. Buy Now Pay Later (BNPL) is available through Klarna and Afterpay for eligible orders over $100. Gift cards can be applied at checkout. If a payment fails, check that your billing address matches the card's registered address and that the card has sufficient funds.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Payment",
+      "page": 2
+    }
+  },
+  {
+    "id": "faq-price-match",
+    "section": "Price Match",
+    "text": "Price Match Guarantee: We will match the price of any identical in-stock item sold by a major authorized retailer. To request a price match, contact support before placing your order and provide a link to the competitor's listing. Price matches are not available after purchase, on marketplace sellers (eBay, Amazon third-party), refurbished or open-box items, bundle deals, or clearance items. If we lower our own price within 7 days of your purchase, contact us for a price adjustment.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Price Match",
+      "page": 3
+    }
+  },
+  {
+    "id": "faq-product-availability",
+    "section": "Stock and Availability",
+    "text": "Stock and Availability: Product availability is shown on each product page. 'In Stock' means the item is ready to ship within 1-2 business days. 'Out of Stock' means the item is temporarily unavailable; click 'Notify Me' to receive an email when it restocks. 'Pre-Order' means the item is available to order but will not ship until the listed release date. Availability can change quickly during sales events. If you place an order and the item goes out of stock before it ships, we will notify you and offer a full refund or the option to wait for restock.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Stock and Availability",
+      "page": 3
+    }
+  },
+  {
+    "id": "faq-data-security",
+    "section": "Account and Data Security",
+    "text": "Account Security: Keep your account password unique and do not share it. We will never ask for your password via email or chat. Enable two-factor authentication (2FA) in your account settings for extra security. If you suspect unauthorized access to your account, reset your password immediately and contact support. We are compliant with PCI-DSS for payment processing and GDPR for data privacy. Your personal data is never sold to third parties. To request a copy of your data or deletion, contact our privacy team at privacy@ecombot-store.com.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Account and Data Security",
+      "page": 3
+    }
+  },
+  {
+    "id": "faq-damaged-on-arrival",
+    "section": "Damaged or Defective Items",
+    "text": "Damaged or Defective Items on Arrival: If your item arrives damaged or defective, contact us within 48 hours of delivery. Take photos of the damage and the packaging. We will arrange a free return and send a replacement at no charge or issue a full refund, whichever you prefer. Do not discard the original packaging until the issue is resolved, as we may need it for a carrier damage claim. Items reported as damaged more than 48 hours after delivery may be handled under the standard returns or warranty process instead.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "Damaged or Defective Items",
+      "page": 4
+    }
+  },
+  {
+    "id": "faq-international-shipping",
+    "section": "International Shipping",
+    "text": "International Shipping: We ship to over 50 countries. International shipping times are typically 7-21 business days depending on destination and customs. Import duties, taxes, and customs fees are the responsibility of the customer and are not included in our prices. We declare the full value of goods on customs forms — we cannot under-declare for customs purposes. Some products cannot be shipped internationally due to regulatory restrictions — this is shown on the product page. Contact support for a shipping quote to your country before ordering.",
+    "metadata": {
+      "doc_type": "faq",
+      "section": "International Shipping",
+      "page": 4
+    }
+  }
+]

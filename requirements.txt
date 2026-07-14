@@ -1,0 +1,34 @@
+# eComBot Capstone — Python dependencies
+# Install with:  pip install -r requirements.txt
+#
+# Run infrastructure: docker compose up -d
+# Run agent:         python demo.py
+
+google-adk==2.1.0
+litellm==1.86.2
+python-dotenv==1.2.2
+psycopg2-binary==2.9.9
+asyncpg==0.30.0
+redis==5.2.1
+SQLAlchemy==2.0.36
+pytest==8.3.5
+pytest-asyncio==0.24.0
+adk-extra-services==0.1.7
+# ── Day 05-06: RAG with ChromaDB ──────────────────────────────────────────
+chromadb==0.6.3
+pypdf==5.1.0
+fpdf2==2.7.9
+# ── Day 08: FastMCP tool servers ─────────────────────────────────────────
+mcp>=1.0.0
+fastmcp>=0.4.0
+httpx>=0.27.0
+# ── Day 10: Chainlit generative UI ───────────────────────────────────────
+chainlit>=2.0.0
+# ── Day 11: Voice pipeline ────────────────────────────────────────────────
+numpy>=1.24.0
+# Optional (install separately if mic/speaker needed):
+#   pip install pyaudio webrtcvad sounddevice
+# ── Day 12: Observability ────────────────────────────────────────────────
+langsmith>=0.1.0
+# ── Dev tools ─────────────────────────────────────────────────────────────
+ruff>=0.4.0

@@ -1,0 +1,64 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment secrets — NEVER commit
+.env
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+*.egg
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes (local dev only)
+postgres_data/
+redis_data/
+
+# ADK generated files
+__pycache__/
+
+# ChromaDB runtime artifacts (rebuilt by embed_catalog.py)
+data/chroma_db/
+data/*.pdf
+
+# SQLite databases
+*.sqlite3
+*.db
+
+# Log files
+*.log
+
+# Voice pipeline audio output
+*.wav
+*.pcm
+*.mp3
+
+# PromptFoo evaluation cache and node deps
+node_modules/
+.promptfoo/
+# evals/output/ is intentionally tracked — committed results serve as submission evidence
+
+# LangSmith output
+langsmith_outputs/
